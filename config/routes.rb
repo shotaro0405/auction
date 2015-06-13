@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/items/' => 'items#index'
   get 'items/:id' => 'items#show'
   post '/items' => 'items#create'
+  get '/items/:id/edit' => 'items#edit'
+  patch '/items/:id' => 'items#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

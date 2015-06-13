@@ -22,6 +22,20 @@ class ItemsController < ApplicationController
     redirect_to "/items/#{@item.id}"
   end
 
+def edit
+  @item = Item.find(params[:id])
+
+end
+
+def update
+  # :idでItem.find
+  @item = Item.find(params[:id])
+
+  #update_attributesメソッドで上書き保存
+  @item.update_attributes(item_params)
+  redirect_to "/items/#{@item.id}"
+end
+
   private
   def item_params
     #params.require(:key).permit(:filter)
